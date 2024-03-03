@@ -1,0 +1,382 @@
+body {
+    background-image: url('./cat.png');
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    color: #fcfcfc;
+    margin-top: 100px;
+    position: relative;
+    padding: 10px 20px; /* Padding to create space around the text */
+    background: linear-gradient(45deg, #ffffff, #ffffff); /* Gradient background */
+    background-clip: text; /* Clip the background to the text */
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust this value to control the height of the highlight */
+    left: 360px;
+    width: 50%;
+    height: 100px; /* Adjust this value to control the thickness of the highlight */
+    background-color: #000000; /* Black color for the highlight */
+    z-index: -1;
+}
+
+.container {
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.cat {
+    background-color: #3d1251;
+    height: 65px;
+    width: 80px;
+    border-radius: 0 80px 80px 0;
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+}
+
+.ear {
+    height: 15px;
+    width: 15px;
+    background-color: #630a7e;
+    position: absolute;
+    bottom: 64px;
+    left: 8px;
+    border-radius: 20px 0 0 0;
+    box-shadow: 25px 0 #630a7e;
+}
+
+.eye,
+.eye:before {
+    height: 20px;
+    width: 20px;
+    background-color: #d6c6c6;
+    position: absolute;
+    border-radius: 50%;
+    top: 15px;
+    left: 10px;
+}
+
+.eye:before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #000;
+    position: absolute;
+    border-radius: 50%;
+    top: 6px;
+    left: 6px;
+}
+
+.eye.right {
+    left: 50px; /* Adjust the position of the right eye */
+}
+.eye.right:before {
+    left: 5px; /* Adjust the position of the right eye pupil */
+}
+
+.nose {
+    background-color: #ffffff;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    box-shadow: 12px 0 #ffffff;
+}
+
+.nose:before {
+    content: "";
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    background-color: #ffffff;
+    left: 6px;
+}
+
+.nose:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 8px solid #d66932;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: 7px;
+    left: 6px;
+}
+
+.body {
+    background-color: #3d1251;
+    height: 90px;
+    width: 140px;
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    border-radius: 60px 60px 0 0;
+    transform-origin: bottom right;
+}
+.mouth {
+    background-color: #b7461d;
+    height: 10px;
+    width: 20px;
+    position: absolute;
+    top: 40px;
+    left: 25px;
+    border-radius: 50%;
+
+}
+
+.tail {
+    background-color: #3d1251;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    right: 150px;
+    bottom: 0;
+    border-radius: 20px 0 0 20px;
+}
+
+.body:before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 12px;
+    width: 30px;
+    border-radius: 6px;
+    bottom: 0;
+    left: 22px;
+    box-shadow: 45px 0 #ffffff;
+}
+
+.food-button,
+.ball-button,
+.water-button {
+    font-size: 20px;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 30%;
+    position: relative;
+}
+
+.fish {
+    background-color: #f7941d;
+    height: 30px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 60px;
+    left: 90px;
+    z-index: 1;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.food-plate {
+    position: absolute;
+    bottom: 20px;
+    top: 500px;
+    left: 300px;
+    width: 80px;
+    height: 80px;
+    background-color: #0e5b03;
+    border-radius: 50%;
+    padding: 5px;
+    border: 5px solid #f3f5f8; /* Add border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+    z-index: 1; /* Ensure the plate is behind the fish */
+}
+
+.food-plate .fish {
+    position: absolute;
+    top: 50%; /* Adjust positioning */
+    left: 50%; /* Adjust positioning */
+    width: 50px;
+    height: 30px;
+    background-color: #fc8f42;
+    border-radius: 50%;
+    transform: rotate(-45deg) translate(-50%, -50%); /* Rotate and center */
+    z-index: 2; /* Ensure the fish is on top of the plate */
+}
+
+.food-plate .fish:before,
+.food-plate .fish:after {
+    content: '';
+    position: absolute;
+    background-color: #101b36;
+}
+
+.food-plate .fish:before {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 50%;
+    left: 15px;
+    transform: translate(-50%, -50%);
+}
+
+.food-plate .fish:after {
+    width: 10px;
+    height: 5px;
+    border-radius: 50%;
+    top: 50%;
+    left: 45px;
+    transform: translate(-50%, -50%);
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000; /* Red */
+    border-radius: 50%; /* Make it round */
+    position: absolute;
+    bottom: 100px;
+    left: calc(60% - 25px); /* Center horizontally */
+    display: block; /* Ensure it's visible */
+}
+
+.water-bowl {
+    width: 80px;
+    height: 40px;
+    background-color: #0860e6fb; /* Blue */
+    border-radius: 0 0 50px 50px; /* Rounded bottom */
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    overflow: hidden; /* Clip overflow */
+}
+
+.water-bowl:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #58b6ec; /* Blue */
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100%; /* Start off screen */
+    right: 50%;
+    transform-origin: bottom center;
+    animation: waterRipple 2s infinite linear; /* Adjust timing as needed */
+}
+
+@keyframes chew {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+@keyframes drink {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+.water-splash {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(34, 111, 235, 0.5); /* Semi-transparent white */
+    border-radius: 50%; /* Circular shape */
+    position: absolute;
+    bottom: 110px; /* Adjust based on water bowl position */
+    right: 130px; /* Adjust based on water bowl position */
+    animation: splash 1s ease-out; /* Splash animation */
+}
+
+@keyframes splash {
+    0% { transform: scale(1); opacity: 1; } /* Initial state */
+    100% { transform: scale(2); opacity: 0; } /* Final state */
+}
+/* For screens smaller than 768px (tablets and below) */
+@media (max-width: 768px) {
+    .container {
+        height: 150px;
+        width: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .cat {
+        bottom: 40px;
+        right: 20px;
+    }
+
+    .food-plate {
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .ball {
+        bottom: 80px;
+        left: calc(50% - 25px);
+    }
+
+    .water-bowl {
+        bottom: 40px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .food-button,
+    .ball-button,
+    .water-button {
+        font-size: 16px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+    }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .container {
+        height: 120px;
+        width: 200px;
+    }
+
+    .cat {
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .food-plate {
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .ball {
+        bottom: 60px;
+        left: calc(50% - 20px);
+    }
+
+    .water-bowl {
+        width: 60px;
+        height: 30px;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .food-button,
+    .ball-button,
+    .water-button {
+        font-size: 14px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+}
